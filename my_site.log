@@ -1,0 +1,61 @@
+INFO:__main__:Finished
+INFO:__main__:Started
+ERROR:aiohttp.server:Error handling request
+Traceback (most recent call last):
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_protocol.py", line 477, in _handle_request
+    resp = await request_handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_app.py", line 559, in _handle
+    return await handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/routes.py", line 10, in main_page
+    return await render_page(request, "main_page")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/utils.py", line 13, in render_page
+    html = await asyncio.to_thread(read_file(page_name))
+                                   ^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/utils.py", line 8, in read_file
+    with open(f"{page_path}", "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'None'
+INFO:aiohttp.access:127.0.0.1 [13/Oct/2024:11:47:04 +0800] "GET / HTTP/1.1" 500 337 "-" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
+INFO:__main__:Started
+ERROR:aiohttp.server:Error handling request
+Traceback (most recent call last):
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_protocol.py", line 477, in _handle_request
+    resp = await request_handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_app.py", line 559, in _handle
+    return await handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/routes.py", line 10, in main_page
+    return await render_page(request, "main_page")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/utils.py", line 12, in render_page
+    html = read_file(page_name)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/utils.py", line 7, in read_file
+    with open(f"{page_path}", "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'None'
+INFO:aiohttp.access:127.0.0.1 [13/Oct/2024:11:48:44 +0800] "GET / HTTP/1.1" 500 337 "-" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
+INFO:__main__:Started
+ERROR:aiohttp.server:Error handling request
+Traceback (most recent call last):
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_protocol.py", line 477, in _handle_request
+    resp = await request_handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_app.py", line 559, in _handle
+    return await handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/routes.py", line 10, in main_page
+    return await render_page(request, "main_page")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/utils.py", line 12, in render_page
+    html = read_file(page_name)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/utils.py", line 7, in read_file
+    with open(f"{page_path}", "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'None'
+INFO:aiohttp.access:127.0.0.1 [13/Oct/2024:11:55:33 +0800] "GET / HTTP/1.1" 500 337 "-" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
