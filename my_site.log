@@ -59,3 +59,133 @@ Traceback (most recent call last):
          ^^^^^^^^^^^^^^^^^^^^^^^^^
 FileNotFoundError: [Errno 2] No such file or directory: 'None'
 INFO:aiohttp.access:127.0.0.1 [13/Oct/2024:11:55:33 +0800] "GET / HTTP/1.1" 500 337 "-" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
+INFO:__main__:Started
+ERROR:aiohttp.server:Error handling request
+Traceback (most recent call last):
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_protocol.py", line 377, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "aiohttp/_http_parser.pyx", line 563, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02z\x01'
+      ^
+INFO:aiohttp.access:127.0.0.1 [14/Oct/2024:12:13:02 +0800] "UNKNOWN / HTTP/1.0" 400 224 "-" "-"
+ERROR:aiohttp.server:Error handling request
+Traceback (most recent call last):
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_protocol.py", line 477, in _handle_request
+    resp = await request_handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_app.py", line 559, in _handle
+    return await handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/routes.py", line 10, in main_page
+    return await render_page(request, page_name="main_page")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/utils.py", line 12, in render_page
+    html = read_file(page_name)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/utils.py", line 7, in read_file
+    with open(f"{page_path}", "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'None'
+INFO:aiohttp.access:127.0.0.1 [14/Oct/2024:12:13:04 +0800] "GET / HTTP/1.1" 500 337 "-" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
+INFO:aiohttp.access:127.0.0.1 [14/Oct/2024:12:13:05 +0800] "GET /favicon.ico HTTP/1.1" 404 175 "http://0.0.0.0:8080/" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
+INFO:__main__:Started
+ERROR:aiohttp.server:Error handling request
+Traceback (most recent call last):
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_protocol.py", line 477, in _handle_request
+    resp = await request_handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_app.py", line 559, in _handle
+    return await handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/urls.py", line 10, in main_page
+    return await render_page(request, "main_page")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/utils.py", line 12, in render_page
+    html = read_file(page_name)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/utils.py", line 7, in read_file
+    with open(f"{page_path}", "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'None'
+INFO:aiohttp.access:127.0.0.1 [14/Oct/2024:12:23:51 +0800] "GET / HTTP/1.1" 500 337 "-" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
+INFO:__main__:Started
+ERROR:aiohttp.server:Error handling request
+Traceback (most recent call last):
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_protocol.py", line 477, in _handle_request
+    resp = await request_handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_app.py", line 559, in _handle
+    return await handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/urls.py", line 10, in main_page
+    return await render_page(request, "main_page")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/utils.py", line 12, in render_page
+    html = read_file(page_name)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/utils.py", line 7, in read_file
+    with open(f"{page_path}", "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'None'
+INFO:aiohttp.access:127.0.0.1 [14/Oct/2024:12:24:46 +0800] "GET / HTTP/1.1" 500 337 "-" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
+INFO:__main__:Started
+ERROR:aiohttp.server:Error handling request
+Traceback (most recent call last):
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_protocol.py", line 477, in _handle_request
+    resp = await request_handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_app.py", line 559, in _handle
+    return await handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/urls.py", line 10, in main_page
+    return await render_page(request, "main_page")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/utils.py", line 15, in render_page
+    html = read_file(page_name)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/utils.py", line 10, in read_file
+    with open(page_path, "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/unit2147/My projects/Python projects/site/templates/main_page'
+INFO:aiohttp.access:127.0.0.1 [14/Oct/2024:12:28:49 +0800] "GET / HTTP/1.1" 500 337 "-" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
+INFO:__main__:Started
+ERROR:aiohttp.server:Error handling request
+Traceback (most recent call last):
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_protocol.py", line 477, in _handle_request
+    resp = await request_handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_app.py", line 559, in _handle
+    return await handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/urls.py", line 10, in main_page
+    return await render_page(request, "main_page")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object Response can't be used in 'await' expression
+INFO:aiohttp.access:127.0.0.1 [14/Oct/2024:12:29:39 +0800] "GET / HTTP/1.1" 500 337 "-" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
+INFO:__main__:Started
+ERROR:aiohttp.server:Error handling request
+Traceback (most recent call last):
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_protocol.py", line 477, in _handle_request
+    resp = await request_handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/venv/lib/python3.12/site-packages/aiohttp/web_app.py", line 559, in _handle
+    return await handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unit2147/My projects/Python projects/site/urls.py", line 10, in main_page
+    return await render_page(request, "main_page")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object Response can't be used in 'await' expression
+INFO:aiohttp.access:127.0.0.1 [14/Oct/2024:12:30:41 +0800] "GET / HTTP/1.1" 500 337 "-" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
+INFO:__main__:Started
+INFO:aiohttp.access:127.0.0.1 [14/Oct/2024:12:31:09 +0800] "GET / HTTP/1.1" 200 3855 "-" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
+INFO:aiohttp.access:127.0.0.1 [14/Oct/2024:12:31:10 +0800] "GET /style.css HTTP/1.1" 404 175 "http://0.0.0.0:8080/" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
+INFO:aiohttp.access:127.0.0.1 [14/Oct/2024:12:31:10 +0800] "GET /logo.png HTTP/1.1" 404 175 "http://0.0.0.0:8080/" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
+INFO:aiohttp.access:127.0.0.1 [14/Oct/2024:12:31:10 +0800] "GET /cart.png HTTP/1.1" 404 175 "http://0.0.0.0:8080/" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
+INFO:aiohttp.access:127.0.0.1 [14/Oct/2024:12:31:10 +0800] "GET /product2.jpg HTTP/1.1" 404 175 "http://0.0.0.0:8080/" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
+INFO:aiohttp.access:127.0.0.1 [14/Oct/2024:12:31:10 +0800] "GET /product1.jpg HTTP/1.1" 404 175 "http://0.0.0.0:8080/" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
+INFO:aiohttp.access:127.0.0.1 [14/Oct/2024:12:31:10 +0800] "GET /product3.jpg HTTP/1.1" 404 175 "http://0.0.0.0:8080/" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"
+INFO:aiohttp.access:127.0.0.1 [14/Oct/2024:12:31:10 +0800] "GET /script.js HTTP/1.1" 404 175 "http://0.0.0.0:8080/" "Mozilla/5.0 (Windows NT 10.0; rv:131.0) Gecko/20100101 Firefox/131.0"

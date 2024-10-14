@@ -1,5 +1,5 @@
 from aiohttp import web
-from routes import routes
+from urls import routes
 import logging
 
 
