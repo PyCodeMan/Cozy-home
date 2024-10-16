@@ -1,9 +1,29 @@
 import asyncio
 import asyncpg
+import config as cfg
+
+
+data_for_connection = {
+    'host': cfg.HOST,
+    'port': cfg.PORT,
+    'user': cfg.USER,
+    'database': cfg.DATABASE,
+    'password': cfg.PASSWORD
+}
+
+
+async def table_exists(name_of_table):
+    async with asyncpg.connect(*data_for_connection) as conn:
+        try:
+            await conn.execute(f"SELECT 1 FROM {table_name} LIMIT 1")
+            return True
+        except Exception as exc:
+            print(exc)
+            return False
 
 
 async def main():
-    async with asyncpg.connect('postgresql://unit2147@localhost/test') as conn:
+    async with asyncpg.connect(*data_for_connection) as conn:
         await conn.execute('''
             CREATE TABLE IF NOT EXISTS goods(
                 furniture_id SERIAL PRIMARY KEY
