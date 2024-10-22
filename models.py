@@ -12,36 +12,76 @@ data_for_connection = {
 }
 
 
-async def table_exists(name_of_table):
+async def tables_initialisation():
     async with asyncpg.connect(*data_for_connection) as conn:
-        try:
-            await conn.execute(f"SELECT 1 FROM {table_name} LIMIT 1")
-            return True
-        except Exception as exc:
-            print(exc)
-            return False
+        await conn.execute('''
+            CREATE TABLE IF NOT EXISTS Categories(
+                ID INT AUTO-INCREMENT PRIMARY KEY,
+                Name VARCHAR(255) NOT NULL
+                )
+        ''')
+        await conn.execute('''
+            CREATE TABLE IF NOT EXISTS Goods(
+                ID INT AUTO-INCREMENT PRIMARY KEY,
+                Name VARCHAR(255) NOT NULL,
+                Description TEXT,
+                Price DECIMAL(10,2) NOT NULL,
+                Image VARCHAR(255),
+                Category INT,
+                FOREIGN KEY (Category) REFERENCES Categories(ID)
+            )
+        ''')
+        await conn.execute('''
+            CREATE TABLE IF NOT EXISTS Characters(
+                ID INT AUTO-INCREMENT PRIMARY KEY,
+                Name VARCHAR(255) NOT NULL
+            )
+        ''')
+        await conn.execute('''
+            CREATE TABLE IF NOT EXISTS Characters_values(
+                ID INT AUTO-INCREMENT PRIMARY KEY,
+                Name VARCHAR(255) NOT NULL,
+                Character INT
+                FOREIGN KEY (Character) REFERENCES Characters(ID)
+            )
+        ''')
+        await conn.execute('''
+            CREATE TABLE IF NOT EXISTS Goods_characters(
+                Good INT,
+                Value INT,
+                Amount INT NOT NULL,
+                PRIMARY KEY (Good, Value)
+                FOREIGN KEY (Good) REFERENCES Goods(ID)
+                FOREIGN KEY (Value) REFERENCES Characters_values(ID)
+            )
+        ''')
+        await conn.execute('''
+            CREATE TABLE IF NOT EXISTS Groups(
+            ID INT AUTO-INCREMENT PRIMARY KEY,
+            Name VARCHAR(255) NOT NULL
+            )
+        ''')
+        await conn.execute('''
+            CREATE TABLE IF NOT EXISTS Groups_goods(
+                Group INT,
+                Value INT,
+                PRIMARY KEY (Group, Value),
+                FOREIGN KEY (Group) REFERENCES Groups(ID)
+                FOREIGN KEY (Value) REFERENCES Characters_values(ID)
+            )
+        ''')
+
+
+async def filling_up_tables(tablename, values):
+    async with asyncpg.connect(*data_for_connection) as conn:
+        await conn.execute('''
+            INSERT INTO TABLENAME=%s VALUES=%s
+        ''', (tablename, values)
+        )
 
 
 async def main():
-    async with asyncpg.connect(*data_for_connection) as conn:
-        await conn.execute('''
-            CREATE TABLE IF NOT EXISTS goods(
-                furniture_id SERIAL PRIMARY KEY
-                sku VARCHAR(255)
-                name VARCHAR(255)
-                category VARCHAR(255)
-                price DECIMAL(10,2)
-                stock_quantity VARCHAR(255)
-                image_url VARCHAR(255)
-                manufacturer VARCHAR(255)
-                material VARCHAR(255)
-                color VARCHAR(255)
-                style VARCHAR(255)
-                dimensions TEXT
-                created_at DATETIME
-                updated_at DATETIME
-            )
-        ''')
+    await tables_initialisation()
 
 
 if __name__ == '__main__':
